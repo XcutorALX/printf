@@ -7,16 +7,16 @@
  * Return: returns the length of characters printed
  */
 int print_unsigned(unsigned int num)
-{	
+{
 	int count = 0, j, *addr;
 
-	unsigned int i;	
+	unsigned int i;
 
 	i = num;
 	if (num == 0)
 	{
 		_putchar(i + '0');
-		return 1;
+		return (1);
 	}
 	while (i > 0)
 	{
@@ -25,8 +25,8 @@ int print_unsigned(unsigned int num)
 	}
 
 	addr = malloc(sizeof(int) * count);
-	
-	i = num > 0? num : num * -1;
+
+	i = num > 0 ? num : num * -1;
 	j = 0;
 	while (i > 0)
 	{

@@ -1,38 +1,36 @@
 #include "main.h"
 #include <stdarg.h>
-#include <stdio.h>
-
 /**
  * _printf - a function that produces out[ut according to a format
  *
  * @format: the format to be followed while printing
  * Return: the lenght of string printed
  */
-
 int _printf(const char *format, ...)
 {
-	int i, count = 0, temp, value;
+	int i, count, temp, value;
 
 	va_list args;
-	va_start(args, format);
 
-	for(i = 0; format[i] != '\0'; i++)
+	va_start(args, format);
+	count = 0;
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
 		{
 			_putchar(format[i]);
 		}
 		else
-		{	
-			i++;			
+		{
+			i++;
 			if (format[i] == 'd' || format[i] == 'i')
-			{	
+			{
 				temp = print_number(va_arg(args, int));
 				count += temp - 1;
 			}
 			else if (format[i] == 'u')
-			{	
-				temp = print_unsigned(va_arg(args,unsigned int));
+			{
+				temp = print_unsigned(va_arg(args, unsigned int));
 				count += temp - 1;
 			}
 			else if (format[i] == 'o')
@@ -63,8 +61,8 @@ int _printf(const char *format, ...)
 				_putchar(format[i - 1]);
 				_putchar(format[i]);
 			}
-		}	
+		}
 		count++;
 	}
-	return count;
+	return (count);
 }

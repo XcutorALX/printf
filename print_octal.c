@@ -8,9 +8,10 @@
 int print_octal(unsigned long int num)
 {
 	int i = 0;
+
 	if (num > 7)
 		i += print_octal(num / 8);
 	i++;
 	_putchar((num % 8) + '0');
-	return i;
+	return (i);
 }

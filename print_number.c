@@ -12,12 +12,12 @@
 int print_number(int num)
 {
 	int i, count = 0, *addr, j;
-		
+
 	i = num;
 	if (num == 0)
 	{
 		_putchar(i + '0');
-		return 1;
+		return (1);
 	}
 	else if (num < 0)
 	{
@@ -32,8 +32,8 @@ int print_number(int num)
 	}
 
 	addr = malloc(sizeof(int) * count);
-	
-	i = num > 0? num : num * -1;
+
+	i = num > 0 ? num : num * -1;
 	j = 0;
 	while (i > 0)
 	{
@@ -47,5 +47,5 @@ int print_number(int num)
 		_putchar(addr[j] + '0');
 	}
 	free(addr);
-	return (num > 0? count : count + 1);
+	return (num > 0 ? count : count + 1);
 }
