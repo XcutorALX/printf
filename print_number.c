@@ -5,11 +5,11 @@
 /**
  * print_number - this function prints a number to standard output
  * @num: the number to print
- *
+ * @ptr: an integer used to keep count of characters printed
  * Return: number of characters printed
  */
 
-int print_number(int num)
+int print_number(int num, int *ptr)
 {
 	int i, count = 0, *addr, j;
 
@@ -17,6 +17,7 @@ int print_number(int num)
 	if (num == 0)
 	{
 		_putchar(i + '0');
+		ptr++;
 		return (1);
 	}
 	else if (num < 0)
@@ -47,5 +48,7 @@ int print_number(int num)
 		_putchar(addr[j] + '0');
 	}
 	free(addr);
+
+	(*ptr) += num > 0 ? count - 1 : count;
 	return (num > 0 ? count : count + 1);
 }

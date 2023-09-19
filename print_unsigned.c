@@ -4,9 +4,10 @@
 /**
  * print_unsigned - prints an unsigned number
  * @num: number to be printed
+ * @ptr: an integer used to keep count of characters printed
  * Return: returns the length of characters printed
  */
-int print_unsigned(unsigned int num)
+int print_unsigned(unsigned int num, int *ptr)
 {
 	int count = 0, j, *addr;
 
@@ -39,5 +40,6 @@ int print_unsigned(unsigned int num)
 	{
 		_putchar(addr[j] + '0');
 	}
+	(*ptr) += count - 1;
 	return (count);
 }
