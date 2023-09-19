@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
+#include <stdio.h>
 /**
  * _printf - a function that produces out[ut according to a format
  *
@@ -50,7 +51,8 @@ int _printf(const char *format, ...)
 			}
 			else if (format[i] == 's')
 			{
-				print_string(va_arg(args, char*));
+				temp = print_string(va_arg(args, char*));
+				count += temp - 1;
 			}
 			else if (format[i] == '%')
 			{
@@ -60,9 +62,11 @@ int _printf(const char *format, ...)
 			{
 				_putchar(format[i - 1]);
 				_putchar(format[i]);
+				count++;
 			}
 		}
 		count++;
 	}
+	printf("%d\n", count);
 	return (count);
 }
