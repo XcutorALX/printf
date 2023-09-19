@@ -67,6 +67,5 @@ int _printf(const char *format, ...)
 		}
 		count++;
 	}
-	printf("%d\n", count);
 	return (count);
 }
